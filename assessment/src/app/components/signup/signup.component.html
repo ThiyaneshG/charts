@@ -1,0 +1,72 @@
+<div class="box1">
+<div class="box">
+    <form [formGroup]="signup" (ngSubmit)="signupdata(signup)" autocomplete="off">
+        <h2>Signup </h2>
+        <div class="inputBox">
+            
+            <span class="text-danger"
+            *ngIf="signup.controls['fname'].dirty && signup.hasError('required', 'fname')">
+            <p class="left1">Required</p></span>
+            <input type="text" formControlName="fname" required="required" />
+            <span>First Name</span>
+            <i></i>
+        </div>
+
+        <div class="inputBox">
+            <span class="text-danger"
+            *ngIf="signup.controls['lname'].dirty && signup.hasError('required', 'lname')">
+            <p class="left1">Required</p></span>
+            <input type="text" formControlName="lname" required="required" />
+            <span>Last Name</span>
+            <i></i>
+        </div>
+
+        <div class="inputBox">
+            <span class="text-danger"
+            *ngIf="signup.controls['email'].dirty && signup.hasError('required', 'email')">
+            <p class="left1">Required</p></span>
+            <input type="eamil" formControlName="email" required="required" />
+            <span>Enter Email</span>
+            <i></i>
+
+        </div>
+        <br>
+
+        <div class="inputBox">
+            <label for="profession">  Profession: </label>
+            <select name="profession" id="profession" formControlName="profession">
+                <option value="Web designer">Web designer</option>
+                <option value="App Developer">App Developer</option>
+                <option value="Testing">Testing</option>
+                <option value="React Developer">React Developer</option>
+                <option value="Angular Developer">Angular Developer</option>
+            </select>
+
+        </div>
+
+        <div class="inputBox">
+            <span class="text-danger"
+            *ngIf="signup.controls['phone'].dirty && signup.hasError('required', 'phone')">
+            <p class="left2">Required</p></span>
+            <input type="text" formControlName="phone" required="required" />
+            <span>Enter Phone Number</span>
+            <i></i>
+        </div>
+
+        <div class="inputBox">
+            <span class="text-danger"
+            *ngIf="signup.controls['password'].dirty && signup.hasError('required', 'password')">
+            <p class="left">Required</p></span>
+            <input type="password" formControlName="password" required="required" />
+            <span>Enter Password</span>
+            <i></i>
+        </div>
+
+        <div class="links">
+            <label class="qwer">Already Account</label>
+            <a routerLink="/login">Signin</a>
+        </div>
+        <button type="submit" [disabled]="!signup.valid" value="Signup">Signup</button>
+    </form>
+</div>
+</div>

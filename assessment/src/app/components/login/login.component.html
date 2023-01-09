@@ -1,0 +1,34 @@
+<div class="box1">
+<div class="box">
+    <form [formGroup]="login" (ngSubmit)="logindata(login)" autocomplete="off">
+        <h2>Login </h2>
+        <div class="inputBox">
+            <span class="text-danger"
+                *ngIf="login.controls['fname'].dirty && login.hasError('required', 'fname')">
+                <p class="left1">Required</p></span>
+            <input type="text" formControlName="fname" required="required" />
+            <span>First Name</span>
+            <i></i>
+
+        </div>
+
+        <div class="inputBox">
+
+            <input type="password" formControlName="password" required="required" />
+            <span>Password</span>
+            <i></i>
+            <span class="text-danger"
+                *ngIf="login.controls['password'].dirty && login.hasError('required', 'password')">
+                <p class="left">Required</p>
+            </span>
+
+        </div>
+
+        <div class="links">
+            <p></p>
+            <a routerLink="/signup">Signup</a>
+        </div>
+        <button type="submit" [disabled]="!login.valid" value="Login">Login</button>
+    </form>
+</div>
+</div>

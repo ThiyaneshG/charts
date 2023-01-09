@@ -1,0 +1,19 @@
+
+<div class="main">
+<h1>Api connected</h1>
+ <div class="dropdown">
+    <button class="dropbtn">More Options</button>
+    <div class="dropdown-content">
+    <a routerLink="/company"> Company Details </a>
+    
+    </div>
+  </div>
+</div>
+<div class="api">
+
+<ul>
+    <li *ngFor="let call of user">
+        {{call.id}} : {{call.title}}
+    </li>
+</ul>
+</div>
